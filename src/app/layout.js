@@ -1,12 +1,9 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Manrope } from "next/font/google";
+import Logo from "./components/Logo";
+import { LuBellDot } from "react-icons/lu";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const ManropeSans = Manrope({
+  variable: "--font-manrope",
   subsets: ["latin"],
 });
 
@@ -18,15 +15,15 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    >
-      <body className="min-h-full flex flex-col">
-        <header>
-          <nav>
+    <html lang="en" className={`${ManropeSans.variable} h-full antialiased`}>
+      <body className="min-h-full flex flex-col m-4">
+        <header className="font-extrabold">
+          <nav className="flex items-center justify-between flex-wrap">
+            <Logo />
             <ul>
-              <li>Kat</li>
+              <li>
+                <LuBellDot className="size-6 stroke-svg [&>circle]:fill-circle [&>circle]:stroke-transparent align-middle" />
+              </li>
             </ul>
           </nav>
         </header>
