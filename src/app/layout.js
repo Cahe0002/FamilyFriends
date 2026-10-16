@@ -1,5 +1,6 @@
 import { Manrope } from "next/font/google";
 import Logo from "./components/Logo";
+import "./globals.css";
 import {
   LuBellDot,
   LuStar,

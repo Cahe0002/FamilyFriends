@@ -1,4 +1,3 @@
-import "./globals.css";
 import BreedCard from "./components/BreedCard";
 import SearchInput from "./components/SearchInput";
 

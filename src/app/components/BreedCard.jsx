@@ -16,7 +16,7 @@ const BreedCard = ({ breedname, description }) => {
               className="aspect-3/2 object-cover object-[75%_40%] rounded-2xl w-full"
             />
           </Link>
-          <FavouriteBtn className="absolute top-2 right-2" />
+          <FavouriteBtn className="absolute top-2 right-2 size-6" />
           <div className="px-3 pt-2 pb-3">
             <span className="text-base font-bold text-gray-800 pt-1.5">
               {breedname}
