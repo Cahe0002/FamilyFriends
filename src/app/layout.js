@@ -7,6 +7,7 @@ import {
   LuUser,
   LuMessageCircle,
 } from "react-icons/lu";
+import Link from "next/link";
 
 const manrope = Manrope({
   variable: "--font-manrope",
@@ -23,11 +24,17 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en" className={`${manrope.variable} h-full antialiased`}>
       <body className="min-h-full flex flex-col max-w-md mx-auto p-4">
-        <header className="font-extrabold">
+        <header>
           <nav className="flex items-center justify-between flex-wrap">
-            <Logo />
-            <button type="button" aria-label="Notifications">
-              <LuBellDot className="size-6 stroke-svg [&>circle]:fill-circle [&>circle]:stroke-transparent align-middle" />
+            <Link href="/" aria-label="Home">
+              <Logo />
+            </Link>
+            <button
+              type="button"
+              aria-label="Notifications"
+              className="rounded-full"
+            >
+              <LuBellDot className="size-6 text-icon [&>circle]:fill-coral [&>circle]:stroke-transparent" />
             </button>
           </nav>
         </header>
@@ -37,7 +44,7 @@ export default function RootLayout({ children }) {
           <nav>
             <ul className="w-full max-w-md mx-auto grid grid-cols-4 place-items-center h-20 text-gray-400">
               <li>
-                <LuHouse className="size-6" />
+                <LuHouse className="size-6 text-coral" />
               </li>
               <li>
                 <LuStar className="size-6" />

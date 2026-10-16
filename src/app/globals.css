@@ -8,9 +8,9 @@
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --color-svg: #333333;
-  --color-circle: #f2968f;
-  --font-sans: var(--font-Manrope);
+  --color-icon: #333333;
+  --color-coral: #f2968f;
+  --font-sans: var(--font-manrope);
 }
 
 /* @media (prefers-color-scheme: dark) {
@@ -24,4 +24,15 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-manrope);
+}
+
+@layer components {
+  .breed-card {
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    border-radius: 1.5rem;
+    background: white;
+    box-shadow: 0 4px 20px rgb(0 0 0 / 0.08);
+  }
 }
