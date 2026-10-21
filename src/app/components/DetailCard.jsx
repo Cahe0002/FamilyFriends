@@ -15,6 +15,7 @@ const DetailCard = ({ className = "", name }) => {
       />
       <Link
         href="/"
+        aria-label="Back to breeds"
         className="absolute place-items-center top-6 left-6 grid size-8 rounded-full bg-white text-icon"
       >
         <LuChevronLeft className="size-5" />
@@ -25,7 +26,7 @@ const DetailCard = ({ className = "", name }) => {
           src="/dummydog.jpg"
           width={32}
           height={32}
-          alt="Affenpinscher"
+          alt=""
           className="size-8 rounded-lg object-cover"
         />
 

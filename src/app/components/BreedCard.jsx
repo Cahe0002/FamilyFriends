@@ -7,7 +7,7 @@ const BreedCard = ({ breedname, description }) => {
     <>
       <div className="breed-card">
         <div className="relative">
-          <Link href="/detailview">
+          <Link href="/detailview" aria-label="Go to breed">
             <Image
               src="/elton.jpg"
               width={160}

@@ -1,10 +1,10 @@
 import DetailCard from "@/app/components/DetailCard";
-import Tag from "@/app/components/TagButton";
+import Tag from "@/app/components/Tag";
 
 const DetailView = () => {
   return (
     <>
-      <DetailCard name={"Affensinscher"} />
+      <DetailCard name={"Affenpinscher"} />
       <h2 className="font-bold text-3xl mt-3.5">Affenpinscher</h2>
       <ul className="mt-4 inline-flex flex-wrap gap-2 mb-4">
         <Tag color="blue">Confident</Tag>
