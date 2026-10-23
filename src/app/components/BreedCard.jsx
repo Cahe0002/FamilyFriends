@@ -2,10 +2,11 @@ import Image from "next/image";
 import FavouriteBtn from "./FavouriteButton";
 import Link from "next/link";
 import { Suspense } from "react";
+import Loading from "./Loading";
 
 export default function Breed() {
   return (
-    <Suspense fallback="Loading...">
+    <Suspense fallback={<Loading />}>
       <FetchBreed />
     </Suspense>
   );
@@ -23,7 +24,10 @@ const FetchBreed = async () => {
       {breeds.map((breed) => (
         <div className="breed-card" key={breed.id}>
           <div className="relative">
-            <Link href="/detailview" aria-label="Go to breed">
+            <Link
+              href={`/detailview/${breed.id}`}
+              aria-label={`Go to ${breed.name}`}
+            >
               <Image
                 src={breed.image.url}
                 width={160}
