@@ -7,13 +7,14 @@ const SearchInput = () => {
         <button
           type="submit"
           aria-label="Search"
-          className="flex items-center justify-center bg-coral rounded-full size-12 shrink-0"
+          className="flex items-center justify-center bg-coral rounded-full size-12 shrink-0 cursor-pointer"
         >
           <LuSearch className="size-5 stroke-white stroke-3 -scale-x-100" />
         </button>
         <input
           name="text"
-          placeholder="search breeds"
+          aria-label="Search breeds"
+          placeholder="Search breeds"
           className="flex-1 min-w-fit outline outline-gray-300 rounded-full p-3"
         />
       </form>
