@@ -1,12 +1,12 @@
-import BreedCard from "./components/BreedCard";
+import BreedList from "./components/BreedList";
 import SearchInput from "./components/SearchInput";
 
-export default function ListView() {
+export default function ListView({ searchParams }) {
   return (
     <>
       <SearchInput />
       <div className="grid grid-cols-2 gap-4">
-        <BreedCard />
+        <BreedList searchParams={searchParams} />
       </div>
     </>
   );

@@ -7,6 +7,7 @@ const DetailCard = ({ className = "", details }) => {
   return (
     <div className="relative detail-card">
       <Image
+        loading="eager"
         src={details.image.url}
         width={340}
         height={360}
@@ -26,7 +27,7 @@ const DetailCard = ({ className = "", details }) => {
           src={details.image.url}
           width={32}
           height={32}
-          alt=""
+          alt={details.name ? details.name : "Image of dog"}
           className="size-8 rounded-lg object-cover"
         />
 
