@@ -1,15 +1,16 @@
 "use client";
 import { LuStar } from "react-icons/lu";
 import { useState } from "react";
+import { addFavourite } from "../actions/actions";
 
-const FavouriteBtn = ({
-  className = "size-6",
-  size = "size-3.5",
-}) => {
+const FavouriteBtn = ({ className = "size-6", size = "size-3.5", id }) => {
   const [isFavourite, setFavourite] = useState(false);
   return (
     <button
-      onClick={() => setFavourite((favourite) => !favourite)}
+      onClick={() => {
+        addFavourite(id);
+        setFavourite((favourite) => !favourite);
+      }}
       aria-pressed={isFavourite}
       type="button"
       aria-label="Add dog to favorites"

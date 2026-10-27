@@ -13,7 +13,8 @@ const Breed = ({ searchParams }) => {
 };
 
 const FetchBreed = async ({ searchParams }) => {
-  const { query } = await searchParams;
+  "use server";
+  const { query, id } = await searchParams;
   const url = query
     ? `https://api.thedogapi.com/v1/breeds/search?q=${query}`
     : "https://api.thedogapi.com/v1/breeds/?limit=12";
@@ -43,7 +44,10 @@ const FetchBreed = async ({ searchParams }) => {
                 className="aspect-3/2 object-cover object-top rounded-2xl w-full"
               />
             </Link>
-            <FavouriteBtn className="absolute top-2 right-2 size-6" />
+            <FavouriteBtn
+              id={breed.image.id}
+              className="absolute top-2 right-2 size-6"
+            />
             <div className="px-3 pt-2 pb-3">
               <span className="text-base font-bold text-gray-800 pt-1.5">
                 {breed.name}

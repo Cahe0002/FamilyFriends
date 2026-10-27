@@ -22,7 +22,11 @@ const DetailCard = ({ className = "", details }) => {
       >
         <LuChevronLeft className="size-5" />
       </Link>
-      <FavouriteBtn className="absolute top-6 right-6 size-8" size="size-5" />
+      <FavouriteBtn
+        id={details.image.id}
+        className="absolute top-6 right-6 size-8"
+        size="size-5"
+      />
       <div className="absolute bottom-6 left-6 flex items-start gap-3 rounded-2xl bg-white/30 p-3 backdrop-blur-md">
         <Image
           src={details.image.url}
