@@ -1,3 +1,4 @@
+"use client";
 import Image from "next/image";
 import FavouriteBtn from "./FavouriteButton";
 import Link from "next/link";
@@ -11,7 +12,7 @@ const DetailCard = ({ className = "", details }) => {
         src={details.image.url}
         width={340}
         height={360}
-        alt="funny dog"
+        alt={details.name ?? "Image of dog"}
         className={`aspect-9/10 object-cover rounded-4xl w-full ${className}`}
       />
       <Link
