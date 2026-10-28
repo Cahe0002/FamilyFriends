@@ -1,16 +1,24 @@
 "use server";
+import { revalidatePath } from "next/cache";
 
-export const addFavourite = async (id) => {
-  const response = await fetch("https://api.thedogapi.com/v1/favourites", {
-    method: "POST",
-    headers: {
-      "x-api-key": process.env.API_KEY,
-      "Content-Type": "application/json",
-    },
-    body: JSON.stringify({
-      image_id: id,
-    }),
-  });
-  console.log("response", response);
-  console.log("id", id);
+const API = "https://api.thedogapi.com/v1";
+
+const headers = {
+  "x-api-key": process.env.API_KEY,
+  "Content-Type": "application/json",
+};
+
+export const toggleFavourite = async (imageId, favouriteId) => {
+  const response = favouriteId
+    ? await fetch(`${API}/favourites/${favouriteId}`, {
+        method: "DELETE",
+        headers,
+      })
+    : await fetch(`${API}/favourites`, {
+        method: "POST",
+        headers,
+        body: JSON.stringify({ image_id: imageId }),
+      });
+
+  revalidatePath("/", "layout");
 };

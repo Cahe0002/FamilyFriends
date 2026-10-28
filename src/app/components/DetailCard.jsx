@@ -1,15 +1,18 @@
 "use client";
 import Image from "next/image";
-import FavouriteBtn from "./FavouriteButton";
+import FavouriteButton from "./FavouriteButton";
 import Link from "next/link";
 import { LuChevronLeft } from "react-icons/lu";
 
-const DetailCard = ({ className = "", details }) => {
+const DetailCard = ({ className = "", details, favouriteId = null }) => {
+  const imgId = details.image?.id ?? details.reference_image_id;
+  const imgUrl = details.image?.url ?? "/elton.jpg";
+
   return (
     <div className="relative detail-card">
       <Image
         loading="eager"
-        src={details.image.url}
+        src={imgUrl}
         width={340}
         height={360}
         alt={details.name ?? "Image of dog"}
@@ -22,14 +25,15 @@ const DetailCard = ({ className = "", details }) => {
       >
         <LuChevronLeft className="size-5" />
       </Link>
-      <FavouriteBtn
-        id={details.image.id}
+      <FavouriteButton
+        id={imgId}
+        favouriteId={favouriteId}
         className="absolute top-6 right-6 size-8"
         size="size-5"
       />
       <div className="absolute bottom-6 left-6 flex items-start gap-3 rounded-2xl bg-white/30 p-3 backdrop-blur-md">
         <Image
-          src={details.image.url}
+          src={imgUrl}
           width={32}
           height={32}
           alt={details.name ? details.name : "Image of dog"}

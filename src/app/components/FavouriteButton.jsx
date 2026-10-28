@@ -1,19 +1,37 @@
 "use client";
+import { useTransition } from "react";
 import { LuStar } from "react-icons/lu";
-import { useState } from "react";
-import { addFavourite } from "../actions/actions";
+import { toggleFavourite } from "../actions/actions";
 
-const FavouriteBtn = ({ className = "size-6", size = "size-3.5", id }) => {
-  const [isFavourite, setFavourite] = useState(false);
+const FavouriteBtn = ({
+  className = "size-6",
+  size = "size-3.5",
+  id,
+  favouriteId = null,
+}) => {
+  console.log("FavouriteBtn props:", { id, favouriteId });
+  const [pending, startTransition] = useTransition();
+  const isFavourite = favouriteId !== null;
+
+  const handleClick = () => {
+    startTransition(async () => {
+      try {
+        await toggleFavourite(id, favouriteId);
+      } catch (err) {
+        console.error(err);
+      }
+    });
+  };
+
   return (
     <button
-      onClick={() => {
-        addFavourite(id);
-        setFavourite((favourite) => !favourite);
-      }}
+      onClick={handleClick}
+      disabled={pending || !id}
       aria-pressed={isFavourite}
       type="button"
-      aria-label="Add dog to favorites"
+      aria-label={
+        isFavourite ? "Remove dog from favourites" : "Add dog to favourites"
+      }
       className={`grid place-items-center rounded-full bg-white/25 backdrop-blur-lg cursor-pointer ${className}`}
     >
       <LuStar
