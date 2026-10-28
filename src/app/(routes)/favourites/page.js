@@ -2,8 +2,6 @@ import Image from "next/image";
 import { Suspense } from "react";
 import FavouriteBtn from "@/app/components/FavouriteButton";
 import Loading from "@/app/components/Loading";
-import SearchInput from "@/app/components/SearchInput";
-import BreedList from "@/app/components/BreedList";
 
 const FavouritesPage = () => {
   return (
