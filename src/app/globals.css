@@ -36,18 +36,4 @@ body {
 }
 
 @layer components {
-  .breed-card {
-    display: flex;
-    flex-direction: column;
-    height: fit-content;
-    border-radius: 1.5rem;
-    background: white;
-    box-shadow: 0 4px 20px rgb(0 0 0 / 0.08);
-  }
-
-  .detail-card {
-    color: var(--color-icon);
-    margin-top: 0.8rem;
-    text-box-trim: trim-both;
-  }
 }
